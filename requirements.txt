@@ -1,0 +1,8 @@
+
+numpy
+scipy
+torch
+torchvision
+matplotlib
+pandas
+pyyaml

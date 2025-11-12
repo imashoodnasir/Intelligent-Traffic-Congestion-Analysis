@@ -1,0 +1,19 @@
+
+seed: 42
+device: "cuda_if_available"
+training:
+  epochs: 3
+  batch_size: 16
+  lr: 1.0e-3
+  weight_decay: 0.01
+  early_stop_patience: 3
+model:
+  vit: {img_size: 224, patch_size: 16, embed_dim: 128, depth: 2, num_heads: 4}
+  tgnn: {node_dim: 32, gcn_dim: 64, gru_dim: 64}
+  fusion: {type: "HAFT"}
+  forecast_horizon: 12
+  temporal_window: 12
+loss: {lambda_rec: 0.6, lambda_temp: 0.4}
+data:
+  metr-la: {path: "data/metr-la"}
+  pems-bay: {path: "data/pems-bay"}
